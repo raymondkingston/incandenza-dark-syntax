@@ -1,4 +1,4 @@
-# incandenza-dark-syntax theme
+# Incandenza Dark syntax theme
 
 A short description of your theme.
 

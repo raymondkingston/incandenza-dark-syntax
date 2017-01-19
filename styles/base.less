@@ -9,11 +9,11 @@ atom-text-editor {
   }
 
   .indent-guide {
-    color: @syntax-indent-guide-color;
+    color: darken(@syntax-indent-guide-color, 10%);
   }
 
   .invisible-character {
-    color: @syntax-invisible-character-color;
+    color: darken(@syntax-invisible-character-color, 10%);
   }
 
   .gutter {
@@ -35,7 +35,7 @@ atom-text-editor {
   .gutter .line-number.folded,
   .gutter .line-number:after,
   .fold-marker:after {
-    color: @light-gray;
+    color: @smokey;
   }
 
   .invisible {
@@ -44,6 +44,10 @@ atom-text-editor {
 
   .cursor {
     color: @syntax-cursor-color;
+  }
+
+  .cursor-line {
+    background-color: lighten(@slate, 3%);
   }
 
   .selection .region {
@@ -64,14 +68,18 @@ atom-text-editor .search-results .marker.current-result .region {
 // Syntax styles
 
 .syntax--comment {
-  color: @light-gray;
+  color: @smokey;
+}
+
+&.syntax--property-name {
+  color: @blue-base;
 }
 
 .syntax--keyword {
-  color: @purple;
+  color: @purple-base;
 
   &.syntax--control {
-    color: @purple;
+    color: @purple-base;
   }
 
   &.syntax--operator {
@@ -79,43 +87,43 @@ atom-text-editor .search-results .marker.current-result .region {
   }
 
   &.syntax--other.syntax--special-method {
-    color: @blue;
+    color: @blue-base;
   }
 
   &.syntax--other.syntax--unit {
-    color: @orange;
+    color: @green-dark;
   }
 }
 
 .syntax--storage {
-  color: @purple;
+  color: @purple-base;
 }
 
 .syntax--constant {
-  color: @orange;
+  color: @green-light;
 
   &.syntax--character.syntax--escape {
-    color: @cyan;
+    color: @blue-light;
   }
 
   &.syntax--numeric {
-    color: @orange;
+    color: @green-base;
   }
 
   &.syntax--other.syntax--color {
-    color: @cyan;
+    color: @blue-light;
   }
 
   &.syntax--other.syntax--symbol {
-    color: @green;
+    color: @green-base;
   }
 }
 
 .syntax--variable {
-  color: @red;
+  color: @orange-base;
 
   &.syntax--interpolation {
-    color: darken(@red, 10%);
+    color: darken(@red-base, 10%);
   }
 
   &.syntax--parameter.syntax--function {
@@ -124,31 +132,31 @@ atom-text-editor .search-results .marker.current-result .region {
 }
 
 .syntax--invalid.syntax--illegal {
-  background-color: @red;
+  background-color: @red-base;
   color: @syntax-background-color;
 }
 
 .syntax--string {
-  color: @green;
+  color: @green-base;
 
 
   &.syntax--regexp {
-    color: @cyan;
+    color: @blue-light;
 
     .syntax--source.syntax--ruby.syntax--embedded {
-      color: @orange;
+      color: @orange-base;
     }
   }
 
   &.syntax--other.syntax--link {
-    color: @red;
+    color: @red-base;
   }
 }
 
 .syntax--punctuation {
   &.syntax--definition {
     &.syntax--comment {
-      color: @light-gray;
+      color: @smokey;
     }
 
     &.syntax--string,
@@ -160,94 +168,104 @@ atom-text-editor .search-results .marker.current-result .region {
 
     &.syntax--heading,
     &.syntax--identity {
-      color: @blue;
+      color: @blue-base;
     }
 
     &.syntax--bold {
-      color: @light-orange;
+      color: @latte;
       font-weight: bold;
     }
 
     &.syntax--italic {
-      color: @purple;
+      color: @purple-base;
       font-style: italic;
     }
   }
 
   &.syntax--section.syntax--embedded {
-    color: darken(@red, 10%);
+    color: darken(@red-base, 10%);
   }
 
 }
 
 .syntax--support {
   &.syntax--class {
-    color: @light-orange;
+    color: @latte;
   }
 
   &.syntax--function  {
-    color: @cyan;
+    color: @blue-light;
 
     &.syntax--any-method {
-      color: @blue;
+      color: @green-light;
     }
   }
 }
 
 .syntax--entity {
-  &.syntax--name.syntax--function {
-    color: @blue;
+  &.syntax--definition {
+    color: @orange-dark;
   }
+
+  &.syntax--name.syntax--function {
+    color: @blue-base;
+  }
+
   &.syntax--name.syntax--type {
-    color: @light-orange;
+    color: @latte;
     text-decoration: underline;
   }
 
   &.syntax--other.syntax--inherited-class {
-    color: @green;
+    color: @green-base;
   }
+
   &.syntax--name.syntax--class, &.syntax--name.syntax--type.syntax--class {
-    color: @light-orange;
+    color: @latte;
   }
 
   &.syntax--name.syntax--section {
-    color: @blue;
+    color: @blue-base;
   }
 
   &.syntax--name.syntax--tag {
-    color: @red;
+    color: @red-base;
     text-decoration: underline;
   }
 
   &.syntax--other.syntax--attribute-name {
-    color: @orange;
+    color: @orange-base;
 
     &.syntax--id {
-      color: @blue;
+      color: @blue-base;
     }
   }
 }
 
 .syntax--meta {
   &.syntax--class {
-    color: @light-orange;
+    color: @latte;
   }
 
   &.syntax--link {
-    color: @orange;
+    color: @orange-base;
   }
 
   &.syntax--require {
-    color: @blue;
+    color: @blue-base;
   }
 
   &.syntax--selector {
-    color: @purple;
+    color: @purple-base;
   }
 
   &.syntax--separator {
-    background-color: @gray;
+    background-color: @dark-gray;
     color: @syntax-text-color;
+  }
+
+  .syntax--punctuation + .syntax--property-value > .syntax--variable {
+    color: @purple-light;
   }
 }
 
@@ -257,48 +275,48 @@ atom-text-editor .search-results .marker.current-result .region {
 
 .syntax--markup {
   &.syntax--bold {
-    color: @orange;
+    color: @orange-base;
     font-weight: bold;
   }
 
   &.syntax--changed {
-    color: @purple;
+    color: @purple-base;
   }
 
   &.syntax--deleted {
-    color: @red;
+    color: @red-base;
   }
 
   &.syntax--italic {
-    color: @purple;
+    color: @purple-base;
     font-style: italic;
   }
 
   &.syntax--heading .syntax--punctuation.syntax--definition.syntax--heading {
-    color: @blue;
+    color: @blue-base;
   }
 
   &.syntax--inserted {
-    color: @green;
+    color: @green-base;
   }
 
   &.syntax--list {
-    color: @red;
+    color: @red-base;
   }
 
   &.syntax--quote {
-    color: @orange;
+    color: @orange-base;
   }
 
   &.syntax--raw.syntax--inline {
-    color: @green;
+    color: @green-base;
   }
 }
 
 .syntax--source.syntax--gfm .syntax--markup {
   -webkit-font-smoothing: auto;
   &.syntax--heading {
-    color: @green;
+    color: @green-base;
   }
 }
 
