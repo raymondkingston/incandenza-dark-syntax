@@ -67,7 +67,8 @@ atom-text-editor .search-results .marker.current-result .region {
 
 // Syntax styles
 
-.syntax--comment {
+.syntax--comment,
+.syntax--doctype {
   color: @smokey;
 }
 
@@ -156,7 +157,9 @@ atom-text-editor .search-results .marker.current-result .region {
 .syntax--punctuation {
   &.syntax--definition {
     &.syntax--comment {
-      color: @smokey;
+      &.syntax--html {
+        color: @smokey;
+      }
     }
 
     &.syntax--string,
@@ -178,7 +181,7 @@ atom-text-editor .search-results .marker.current-result .region {
 
     &.syntax--italic {
       color: @purple-base;
-      font-style: italic;
+      font-style: italic; 
     }
   }
 
@@ -229,8 +232,7 @@ atom-text-editor .search-results .marker.current-result .region {
   }
 
   &.syntax--name.syntax--tag {
-    color: @red-base;
-    text-decoration: underline;
+    color: @latte;
   }
 
   &.syntax--other.syntax--attribute-name {
@@ -262,6 +264,12 @@ atom-text-editor .search-results .marker.current-result .region {
   &.syntax--separator {
     background-color: @dark-gray;
     color: @syntax-text-color;
+  }
+
+  &.syntax--tag.syntax--sgml.syntax--html {
+    .syntax--tag {
+      color: @smokey;
+    }
   }
 
   .syntax--punctuation + .syntax--property-value > .syntax--variable {
@@ -313,12 +321,39 @@ atom-text-editor .search-results .marker.current-result .region {
   }
 }
 
+.syntax--html {
+  &.syntax--punctuation.syntax--definition {
+    &.syntax--tag {
+      color: @latte;
+    }
+
+    &.syntax--string {
+      color: @green-dark;
+    }
+  }
+
+  &.syntax--entity.syntax--name.syntax--tag.syntax--inline.syntax--any {
+    color: @latte;
+    text-decoration: none;
+  }
+}
+
 .syntax--source.syntax--gfm .syntax--markup {
   -webkit-font-smoothing: auto;
   &.syntax--heading {
     color: @green-base;
   }
 }
+
+.syntax--php {
+  &.syntax--punctuation {
+    &.syntax--begin,
+    &.syntax--end {
+      color: @wheat;
+    }
+  }
+}
+ // syntax--section syntax--embedded
 
 
 // Mini editor
