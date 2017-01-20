@@ -3,10 +3,10 @@
 // Set Color Variables
 
 // neutrals
-@twine:         #d6d6d6;
+@twine:         mix(#E6E1CF, #d6d6d6, 50%);
 @smokey:        #828280;
-@dark-gray:     #555555;
-@slate:         #2e2e2e;
+@dark-gray:     mix(#5C6773, #444444, 50%);
+@slate:         mix(#5C6773, #111111, 20%);
 
 // reds
 @red-light:     lighten(@red-base, 15%);
@@ -16,33 +16,29 @@
 // oranges
 @orange-light:  lighten(@orange-bright, 20%);
 @orange-bright: #ff982d;
-// @orange-base:   #d3701f;
-// @orange-base:   #d47c35;
 @orange-base:   mix(#FF7733, #d47c35, 50%);
 @orange-dark:   darken(@orange-bright, 20%);
 
 // yellows
-@wheat:         lighten(@latte, 20%);
-@latte:         #e5b567;
-// @latte:         #FFCB6B;
+@wheat:         lighten(@latte, 15%);
+@latte:         desaturate(lighten(#e5b567, 8%), 5%);
+@yellow:        mix(#E7C547, @latte, 50%);
 
 // greens
 @green-light:   lighten(@green-base, 17%);
-// @green-base:    #9fbe6e;
-@green-base:    mix(#9fbe6e, #B8CC52, 50%);
+@green-base:    desaturate(mix(#B8CC52, #9fbe6e, 50%), 5%);
 @green-dark:    darken(@green-base, 15%);
 
 // blues
 @blue-light:    lighten(@blue-base, 20%);
-// @blue-base:     #6a99bb;
-@blue-base:     mix(#6a99bb, #36A3D9, 50%);
+@blue-base:     lighten(mix(#36A3D9, #6a99bb, 50%), 5%);
 @blue-dark:     darken(@blue-base, 10%);
 @blue-darkest:  #374752;
 
 // purples
 @purple-light:  lighten(@purple-base, 10%);
-// @purple-base:   #b294bb;
-@purple-base:   #C792EA;
+@purple-base:   mix(#C792EA, #b294bb, 50%);
 @purple-dark:   #90516b;
 
-// some from https://github.com/equinusocio/material-theme
+// a few from https://github.com/equinusocio/material-theme
+// a few from https://atom.io/themes/ayu

@@ -4,61 +4,28 @@
 // include a syntax-variables.less file.
 
 // General colors
-@syntax-text-color: mix(#E6E1CF, @twine, 50%);
-@syntax-cursor-color: #F29718;
-@syntax-selection-color: fadeout(@blue-dark, 70%);
-@syntax-background-color: #2e2e2e;
+@syntax-text-color: @twine;
+@syntax-cursor-color: mix(#F29718, @dark-gray, 80%);
+@syntax-selection-color: fadeout(@dark-gray, 75%);
+@syntax-background-color: @slate;
 
 // Guide colors
-@syntax-wrap-guide-color: #343434;
-@syntax-indent-guide-color: #343434;
-@syntax-invisible-character-color: #343434;
+@syntax-wrap-guide-color: fadeout(@dark-gray, 50%);
+@syntax-indent-guide-color: fadeout(@dark-gray, 50%);
+@syntax-invisible-character-color: fadeout(@dark-gray, 50%);
 
 // For find and replace markers
-@syntax-result-marker-color: #343434;
-@syntax-result-marker-color-selected: #E6E1CF;
+@syntax-result-marker-color: @dark-gray;
+@syntax-result-marker-color-selected: fadeout(@syntax-text-color, 70%);
 
 // Gutter colors
-@syntax-gutter-text-color: #E6E1CF;
-@syntax-gutter-text-color-selected: #E6E1CF;
+@syntax-gutter-text-color: @dark-gray;
+@syntax-gutter-text-color-selected: fadeout(@twine, 50%);
 @syntax-gutter-background-color: @syntax-background-color;
-@syntax-gutter-background-color-selected: #151A1F;
+@syntax-gutter-background-color-selected: lighten(@syntax-background-color, 5%);
 
 // For git diff info. i.e. in the gutter
 @syntax-color-renamed: mix(#96CBFE, @blue-dark, 50%);
 @syntax-color-added: mix(#A8FF60, @green-base, 50%);
 @syntax-color-modified: mix(#E9C062, @latte, 50%);
 @syntax-color-removed: mix(#CC6666, @red-dark, 50%);
-
-
-
-// This defines all syntax variables that syntax themes must implement when they
-// include a syntax-variables.less file.
-/*
-// General colors
-@syntax-text-color: @twine;
-@syntax-cursor-color: @twine;
-@syntax-selection-color: lighten(@dark-gray, 10%);
-@syntax-background-color: @slate;
-
-// Guide colors
-@syntax-wrap-guide-color: @dark-gray;
-@syntax-indent-guide-color: @dark-gray;
-@syntax-invisible-character-color: @dark-gray;
-
-// For find and replace markers
-@syntax-result-marker-color: @smokey;
-@syntax-result-marker-color-selected: @twine;
-
-// Gutter colors
-@syntax-gutter-text-color: @dark-gray;
-@syntax-gutter-text-color-selected: @smokey;
-@syntax-gutter-background-color: @slate;
-@syntax-gutter-background-color-selected: @dark-gray;
-
-// For git diff info. i.e. in the gutter
-@syntax-color-renamed: @blue-dark;
-@syntax-color-added: @green-base;
-@syntax-color-modified: @latte;
-@syntax-color-removed: @red-dark;
-*/
